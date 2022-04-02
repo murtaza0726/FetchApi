@@ -26,3 +26,4 @@ six==1.16.0
 SQLAlchemy==1.4.32
 sqlparse==0.4.2
 Werkzeug==2.0.3
+gunicorn==19.7.1
