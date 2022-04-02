@@ -9,6 +9,7 @@ Flask-MySQL==1.5.2
 Flask-MySQLdb==1.0.1
 Flask-SQLAlchemy==2.5.1
 greenlet==1.1.2
+gunicorn==20.1.0
 itsdangerous==2.1.1
 Jinja2==3.0.3
 MarkupSafe==2.1.1
@@ -26,4 +27,3 @@ six==1.16.0
 SQLAlchemy==1.4.32
 sqlparse==0.4.2
 Werkzeug==2.0.3
-gunicorn==19.7.1
