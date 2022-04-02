@@ -1,1 +1,1 @@
-web: gunicorn fetchApi.wsgi --log-file -
+web: gunicorn demo:app
