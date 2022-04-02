@@ -1,11 +1,22 @@
 import flask
+from flask_restful import Resource
 from flask.json import JSONEncoder
 from flask import jsonify, request
 from connections import mysql
 from flask_sqlalchemy import SQLAlchemy
- 
-app = flask.Flask(__name__)
+from flask_cors import CORS
 
+app = flask.Flask(__name__)
+CORS(app)
+
+
+class status (Resource):
+    def get(self):
+        try:
+            return {'data': 'Api is Running'}
+        except:
+            return {'data': 'An Error Occurred during fetching Api'}
+ 
 # Database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://murtaza@az900-mysql:Welcome1@az900-mysql.mysql.database.azure.com/demodb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
