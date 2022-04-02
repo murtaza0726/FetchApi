@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 web: gunicorn demo:app --log-file -
-=======
-web: gunicorn demo.wsgi
->>>>>>> 3d9cd765ed5d491be8c0805ae34c9af0a8d07f71
