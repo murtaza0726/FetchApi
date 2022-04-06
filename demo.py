@@ -42,7 +42,7 @@ class user(db.Model):
         self.Takeout_places = Takeout_places
         self.Gym_membership = Gym_membership
 
-@app.route('/user', methods=['GET'])
+@app.route('/health', methods=['GET'])
 def getuser():
     aData = user.query.all() 
     output=[]
