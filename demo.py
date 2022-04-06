@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = flask.Flask(__name__)
  
 # Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://murtaza@az900-mysql:Welcome1@az900-mysql.mysql.database.azure.com/demodb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sql6484152:MHlF4DvlCs@sql6.freemysqlhosting.net/sql6484152'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.debug = True
 db = SQLAlchemy(app)
@@ -17,8 +17,7 @@ class user(db.Model):
     __tablename__ = 'ProjectDP'
     ID = db.Column(db.Integer, primary_key=True)
     City = db.Column(db.String(50), unique=True)
-    Rank = db.Column(db.Integer)
-    Sunshine_hours = db.Column(db.Integer)
+    Sunshine = db.Column(db.Integer)
     Cost_water = db.Column(db.Float)
     ObesityLevels_percent = db.Column(db.Float)
     Life_expectancy = db.Column(db.Float)
@@ -29,11 +28,10 @@ class user(db.Model):
     Takeout_places = db.Column(db.Integer)
     Gym_membership = db.Column(db.Float)
 
-    def __init__(self, ID, City, Rank, Sunshine_hours, Cost_water, ObesityLevels_percent, Life_expectancy, Pollution_Index, Hours_worked, Happiness_levels, Outdoor_activities, Takeout_places, Gym_membership):
+    def __init__(self, ID, City, Sunshine, Cost_water, ObesityLevels_percent, Life_expectancy, Pollution_Index, Hours_worked, Happiness_levels, Outdoor_activities, Takeout_places, Gym_membership):
         self.ID = ID
         self.City = City
-        self.Rank = Rank
-        self.Sunshine_hours = Sunshine_hours
+        self.Sunshine = Sunshine
         self.Cost_water = Cost_water
         self.ObesityLevels_percent = ObesityLevels_percent
         self.Life_expectancy = Life_expectancy
@@ -52,8 +50,7 @@ def getuser():
         pData = {}
         pData['ID']=data.ID
         pData['City']=data.City
-        pData['Rank']=data.Rank
-        pData['Sunshine_hours']=data.Sunshine_hours
+        pData['Sunshine']=data.Sunshine
         pData['Cost_water']=data.Cost_water
         pData['ObesityLevels_percent']=data.ObesityLevels_percent
         pData['Life_expectancy']=data.Life_expectancy
