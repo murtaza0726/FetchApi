@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 app = flask.Flask(__name__)
  
 # Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://sql6484152:MHlF4DvlCs@sql6.freemysqlhosting.net/sql6484152'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://be32eb4083c64f:b41f6242@sus-cdbr-east-05.cleardb.net/heroku_16c301709b71772'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.debug = True
 db = SQLAlchemy(app)
