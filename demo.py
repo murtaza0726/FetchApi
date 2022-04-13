@@ -15,6 +15,7 @@ db = SQLAlchemy(app)
 class user(db.Model):
     __tablename__ = 'ProjectDP'
     ID = db.Column(db.Integer, primary_key=True)
+    Country = db.Column(db.String(50), unique=True)
     City = db.Column(db.String(50), unique=True)
     Sunshine = db.Column(db.Integer)
     Cost_water = db.Column(db.Float)
@@ -27,8 +28,9 @@ class user(db.Model):
     Takeout_places = db.Column(db.Integer)
     Gym_membership = db.Column(db.Float)
 
-    def __init__(self, ID, City, Sunshine, Cost_water, ObesityLevels_percent, Life_expectancy, Pollution_Index, Hours_worked, Happiness_levels, Outdoor_activities, Takeout_places, Gym_membership):
+    def __init__(self, ID, Country, City, Sunshine, Cost_water, ObesityLevels_percent, Life_expectancy, Pollution_Index, Hours_worked, Happiness_levels, Outdoor_activities, Takeout_places, Gym_membership):
         self.ID = ID
+        self.Country = Country
         self.City = City
         self.Sunshine = Sunshine
         self.Cost_water = Cost_water
@@ -41,13 +43,14 @@ class user(db.Model):
         self.Takeout_places = Takeout_places
         self.Gym_membership = Gym_membership
 
-@app.route('/health', methods=['GET'])
+@app.route('/api/client/v0.1/api/health', methods=['GET'])
 def getuser():
     aData = user.query.all() 
     output=[]
     for data in aData:
         pData = {}
         pData['ID']=data.ID
+        pData['Country']=data.Country
         pData['City']=data.City
         pData['Sunshine']=data.Sunshine
         pData['Cost_water']=data.Cost_water
